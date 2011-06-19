@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<overlay  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+ 
+	<script type="application/x-javascript">
+	  <![CDATA[
+		/*
+		  improvements more than welcome please submit these to github, regards
+		*/
+		var titoTabCloseOther = {
+		  
+		  load:function()
+		  {
+			
+			removeEventListener('load', titoTabCloseOther.load, false);
+			
+			document
+			  .getElementById('buffertab-context-close-others')
+			  .setAttribute('oncommand', 'titoTabCloseOther.close();');
+			  
+		  },
+		  close:function()
+		  {
+			var currentView = ko.views.manager.currentView;
+			var views = ko.views.manager.topView.getDocumentViews(true);
+			var toClose = [];
+			
+			for(var i=0;i<views.length;i++)
+			{
+			  if(currentView != views[i])
+				toClose[toClose.length] = views[i];
+			}
+			
+			for(var id in toClose)
+			  toClose[id].close();
+			  
+			delete toClose, views, currentView;
+			
+		  }
+		};
+		addEventListener('load', titoTabCloseOther.load, false);
+	  ]]>
+	</script>
+  	
+</overlay>
