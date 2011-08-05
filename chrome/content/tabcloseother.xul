@@ -31,7 +31,10 @@
 			}
 			
 			for(var id in toClose)
+			{
+			  toClose[id].makeCurrent();
 			  toClose[id].close();
+			}
 			  
 			delete toClose, views, currentView;
 			
