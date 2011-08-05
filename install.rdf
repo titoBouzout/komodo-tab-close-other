@@ -6,7 +6,7 @@
     <Description about="urn:mozilla:install-manifest">
         <em:id>tito@tabcloseother</em:id>
         <em:name>Tab close others</em:name>
-        <em:version>0</em:version>
+        <em:version>0.110805.1</em:version>
         <em:description>A menuitem on tab context menu to close other tabs.</em:description>
         <em:creator>Tito Bouzout</em:creator>
 		<em:homepageURL>https://github.com/titoBouzout/komodo-tab-close-other</em:homepageURL>
